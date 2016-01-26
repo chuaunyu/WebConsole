@@ -1,0 +1,12 @@
+{
+    "name": "WebConsole",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node app.pty.js"
+    },
+    "dependencies": {
+        "express" : "~4.0.0",
+        "ws": "*",
+        "ssh2": "*"
+    }
+}

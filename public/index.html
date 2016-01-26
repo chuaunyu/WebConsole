@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <meta name="description" content="Web Console">
+    <meta name="author" content="区传瑜">
+
+    <title>传瑜的Web Console</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="term.js"></script>
+    <script type="text/javascript" src="webConsole.js"></script>
+
+    
+</head>
+
+<body>
+    <div id="console"></div>
+    <script type="text/javascript">
+       var getUrl = function(){
+            var urlPre = null;
+            if(window.location.protocol == "https:"){
+                urlPre = "wss:";
+            }else{
+                urlPre = "ws:";
+            }
+            return urlPre + '//'+window.location.hostname+':8901/WebConsole';
+        }
+        $(function(){
+            new WebConsole({
+                url : getUrl(),
+                container : '#console',
+                cols : 80,
+                rows : 24
+            });
+        });
+    </script>
+</body>
+
+</html>
